@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Intern | Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind Configuration (Must stay in HTML for CDN) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        dark: '#0f172a',
+                        card: '#1e293b',
+                        accent: '#06b6d4', // Cyan
+                        accent2: '#3b82f6', // Blue
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white relative font-sans">
+
+    <header class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-md border-b border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center h-20">
+            <a href="#home" class="text-2xl font-bold font-mono tracking-tighter">
+                <span class="text-accent">&lt;</span>DevOps<span class="text-accent">/&gt;</span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-300 hover:text-accent transition-colors text-sm uppercase tracking-wider font-semibold">Home</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-accent transition-colors text-sm uppercase tracking-wider font-semibold">About</a>
+                <a href="#skills" class="nav-link text-gray-300 hover:text-accent transition-colors text-sm uppercase tracking-wider font-semibold">Skills</a>
+                <a href="#projects" class="nav-link text-gray-300 hover:text-accent transition-colors text-sm uppercase tracking-wider font-semibold">Projects</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-accent transition-colors text-sm uppercase tracking-wider font-semibold">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-300 focus:outline-none" id="mobile-menu-btn">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Nav Menu -->
+        <div class="md:hidden hidden bg-card border-b border-white/10 absolute w-full" id="mobile-menu">
+            <div class="px-6 pt-2 pb-4 space-y-1 shadow-xl">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-white/5 rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-white/5 rounded-md">About</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-white/5 rounded-md">Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-white/5 rounded-md">Projects</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-white/5 rounded-md">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6 md:px-12 relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl -z-10"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent2/20 rounded-full blur-3xl -z-10"></div>
+
+            <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center reveal">
+                <div class="order-2 md:order-1 space-y-6 text-center md:text-left">
+                    <p class="text-accent font-mono text-lg">Hello World, I am</p>
+                    <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                        Future <br> <span class="text-gradient">DevOps Engineer</span>
+                    </h1>
+                    <p class="text-gray-400 text-lg max-w-lg mx-auto md:mx-0">
+                        Bridging the gap between development and operations. Passionate about automation, cloud infrastructure, and building scalable CI/CD pipelines. <b>GitHub Project By Muhammad Yousuf Moten </b>
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-4">
+                        <a href="#contact" class="px-8 py-3 rounded-full bg-accent hover:bg-accent2 text-white font-semibold transition-all shadow-lg hover:shadow-accent/50 text-center">
+                            Deploy Connection
+                        </a>
+                        <a href="#projects" class="px-8 py-3 rounded-full bg-transparent border border-gray-500 hover:border-accent text-white font-semibold transition-all text-center">
+                            View Infrastructure
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="order-1 md:order-2 flex justify-center relative">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-accent to-accent2 glow-img">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-card border-4 border-dark">
+                            <img src="Pic.jpg" alt="Profile Picture" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x400/1e293b/06b6d4?text=Profile+Pic'">
+                        </div>
+                    </div>
+                    <!-- Floating Tech Badges -->
+                    <div class="absolute top-4 right-4 md:-right-4 bg-card p-3 rounded-xl shadow-lg border border-white/10 animate-bounce" style="animation-duration: 3s;">
+                        <i class="fab fa-docker text-blue-500 text-3xl"></i>
+                    </div>
+                    <div class="absolute bottom-10 left-4 md:-left-8 bg-card p-3 rounded-xl shadow-lg border border-white/10 animate-bounce" style="animation-duration: 4s;">
+                        <i class="fa-brands fa-linux text-yellow-500 text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-card/30 border-y border-white/5 px-6 md:px-12">
+            <div class="max-w-7xl mx-auto reveal">
+                <div class="flex items-center gap-4 mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">About Me</h2>
+                    <div class="h-px bg-white/20 flex-grow"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 text-gray-300 text-lg leading-relaxed">
+                    <div>
+                        <p class="mb-6">
+                            I am a driven technology enthusiast transitioning into the world of DevOps. My journey began with a curiosity about how software gets from a developer's laptop to production reliably and efficiently.
+                        </p>
+                        <p>
+                            I strongly believe in the power of automation, infrastructure as code (IaC), and continuous integration/continuous deployment (CI/CD). I am actively building my foundational skills in cloud environments and containerization orchestrations.
+                        </p>
+                    </div>
+                    <div class="bg-card p-6 rounded-2xl border border-white/5 flex flex-col justify-center">
+                        <ul class="space-y-4 font-mono text-sm">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-terminal text-accent w-5"></i> <span>Passionate about CLI & Shell Scripting</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-cloud text-accent w-5"></i> <span>Focused on Cloud-Native Architecture</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-sync text-accent w-5"></i> <span>Advocate for Agile & Continuous Delivery</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-shield-alt text-accent w-5"></i> <span>Learning DevSecOps principles</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 px-6 md:px-12">
+            <div class="max-w-7xl mx-auto reveal">
+                <div class="flex items-center gap-4 mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold">Technical Arsenal</h2>
+                    <div class="h-px bg-white/20 flex-grow"></div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Skill Card -->
+                    <div class="bg-card hover:bg-card/80 p-6 rounded-2xl border border-white/5 text-center transition-all hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20 group">
+                        <i class="fa-brands fa-linux text-5xl mb-4 text-gray-200 group-hover:text-yellow-500 transition-colors"></i>
+                        <h3 class="font-bold text-lg">Linux</h3>
+                        <p class="text-xs text-gray-400 mt-2 font-mono">Bash, Administration</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-card hover:bg-card/80 p-6 rounded-2xl border border-white/5 text-center transition-all hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20 group">
+                        <i class="fa-brands fa-git-alt text-5xl mb-4 text-gray-200 group-hover:text-orange-500 transition-colors"></i>
+                        <h3 class="font-bold text-lg">Git</h3>
+                        <p class="text-xs text-gray-400 mt-2 font-mono">Version Control, GitHub Actions</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-card hover:bg-card/80 p-6 rounded-2xl border border-white/5 text-center transition-all hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20 group">
+                        <i class="fa-brands fa-docker text-5xl mb-4 text-gray-200 group-hover:text-blue-500 transition-colors"></i>
+                        <h3 class="font-bold text-lg">Docker</h3>
+                        <p class="text-xs text-gray-400 mt-2 font-mono">Containerization</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-card hover:bg-card/80 p-6 rounded-2xl border border-white/5 text-center transition-all hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20 group">
+                        <svg class="w-12 h-12 mx-auto mb-4 fill-current text-gray-200 group-hover:text-blue-600 transition-colors" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 31.78l-12.82-7.4v-14.77l12.82-7.39 12.82 7.39v14.77zM4.15 23.82l11.85 6.84 11.85-6.84v-13.63l-11.85-6.84-11.85 6.84z"/><path d="M16 26.5l-9.1-5.26v-10.51l9.1-5.26 9.1 5.26v10.51zM7.88 20.65l8.12 4.69 8.12-4.69v-9.3l-8.12-4.69-8.12 4.69z"/><path d="M16 21.22l-4.55-2.63v-5.26l4.55-2.63 4.55 2.63v5.26z"/></svg>
+                        <h3 class="font-bold text-lg">Kubernetes</h3>
+                        <p class="text-xs text-gray-400 mt-2 font-mono">Orchestration (Basics)</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-card hover:bg-card/80 p-6 rounded-2xl border border-white/5 text-center transition-all hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20 group">
+                        <i class="fa-brands fa-jenkins text-5xl mb-4 text-gray-200 group-hover:text-red-500 transition-colors"></i>
+                        <h3 class="font-bold text-lg">Jenkins</h3>
+                        <p class="text-xs text-gray-400 mt-2 font-mono">Pipelines, Automation</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-card hover:bg-card/80 p-6 rounded-2xl border border-white/5 text-center transition-all hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20 group">
+                        <i class="fa-brands fa-aws text-5xl mb-4 text-gray-200 group-hover:text-orange-400 transition-colors"></i>
+                        <h3 class="font-bold text-lg">AWS</h3>
+                        <p class="text-xs text-gray-400 mt-2 font-mono">EC2, S3, IAM</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-card hover:bg-card/80 p-6 rounded-2xl border border-white/5 text-center transition-all hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20 group">
+                        <i class="fa-brands fa-python text-5xl mb-4 text-gray-200 group-hover:text-yellow-400 transition-colors"></i>
+                        <h3 class="font-bold text-lg">Python</h3>
+                        <p class="text-xs text-gray-400 mt-2 font-mono">Scripting, Boto3</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-card hover:bg-card/80 p-6 rounded-2xl border border-white/5 text-center transition-all hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20 group">
+                        <i class="fa-solid fa-network-wired text-5xl mb-4 text-gray-200 group-hover:text-cyan-500 transition-colors"></i>
+                        <h3 class="font-bold text-lg">Terraform</h3>
+                        <p class="text-xs text-gray-400 mt-2 font-mono">Infrastructure as Code</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 bg-card/30 border-y border-white/5 px-6 md:px-12">
+            <div class="max-w-7xl mx-auto reveal">
+                <div class="flex items-center gap-4 mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold">Featured Deployments</h2>
+                    <div class="h-px bg-white/20 flex-grow"></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-dark rounded-2xl overflow-hidden border border-white/10 hover:border-accent/50 transition-all hover:-translate-y-2 group">
+                        <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center border-b border-white/10 group-hover:bg-slate-800 transition-colors relative overflow-hidden">
+                            <i class="fa-solid fa-code-merge text-6xl text-white/20 group-hover:text-accent/40 group-hover:scale-110 transition-all duration-500"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold">Automated CI/CD Pipeline</h3>
+                                <a href="#" class="text-gray-400 hover:text-accent"><i class="fa-brands fa-github text-xl"></i></a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4">
+                                Designed a continuous integration and deployment pipeline using GitHub Actions to automatically test and build a Node.js application, pushing artifacts to Docker Hub.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="px-2 py-1 text-xs font-mono bg-accent/10 text-accent rounded">GitHub Actions</span>
+                                <span class="px-2 py-1 text-xs font-mono bg-accent/10 text-accent rounded">Docker</span>
+                                <span class="px-2 py-1 text-xs font-mono bg-accent/10 text-accent rounded">Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-dark rounded-2xl overflow-hidden border border-white/10 hover:border-accent/50 transition-all hover:-translate-y-2 group">
+                        <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center border-b border-white/10 group-hover:bg-slate-800 transition-colors relative overflow-hidden">
+                            <i class="fa-solid fa-server text-6xl text-white/20 group-hover:text-accent/40 group-hover:scale-110 transition-all duration-500"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold">AWS IaC Provisioning</h3>
+                                <a href="#" class="text-gray-400 hover:text-accent"><i class="fa-brands fa-github text-xl"></i></a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4">
+                                Wrote Terraform scripts to provision a highly available VPC architecture on AWS, including public/private subnets, internet gateways, and EC2 auto-scaling groups.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="px-2 py-1 text-xs font-mono bg-accent/10 text-accent rounded">Terraform</span>
+                                <span class="px-2 py-1 text-xs font-mono bg-accent/10 text-accent rounded">AWS</span>
+                                <span class="px-2 py-1 text-xs font-mono bg-accent/10 text-accent rounded">VPC</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="bg-dark rounded-2xl overflow-hidden border border-white/10 hover:border-accent/50 transition-all hover:-translate-y-2 group">
+                        <div class="h-48 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center border-b border-white/10 group-hover:bg-slate-800 transition-colors relative overflow-hidden">
+                            <i class="fa-solid fa-cubes text-6xl text-white/20 group-hover:text-accent/40 group-hover:scale-110 transition-all duration-500"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold">Dockerized Microservices</h3>
+                                <a href="#" class="text-gray-400 hover:text-accent"><i class="fa-brands fa-github text-xl"></i></a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4">
+                                Containerized a multi-tier web application consisting of a React frontend, Python API backend, and Redis cache using Docker Compose for local development parity.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="px-2 py-1 text-xs font-mono bg-accent/10 text-accent rounded">Docker Compose</span>
+                                <span class="px-2 py-1 text-xs font-mono bg-accent/10 text-accent rounded">Python</span>
+                                <span class="px-2 py-1 text-xs font-mono bg-accent/10 text-accent rounded">Nginx</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-6 md:px-12 relative">
+            <div class="absolute bottom-0 right-0 w-full h-full bg-gradient-to-t from-accent/5 to-transparent -z-10"></div>
+            
+            <div class="max-w-3xl mx-auto text-center reveal">
+                <p class="text-accent font-mono text-sm mb-2">What's Next?</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
+                <p class="text-gray-400 mb-10">
+                    I am currently looking for an internship opportunity to apply my knowledge in real-world environments. Whether you have a position available or just want to say hi, I'll try my best to get back to you!
+                </p>
+
+                <!-- Contact Form -->
+                <form id="contactForm" class="bg-card p-8 rounded-2xl border border-white/10 text-left mb-12 shadow-2xl">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2 font-mono">Name</label>
+                            <input type="text" required class="w-full bg-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors placeholder-gray-600" placeholder="Muhammad Yousuf Moten">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2 font-mono">Email</label>
+                            <input type="email" required class="w-full bg-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors placeholder-gray-600" placeholder="abc@company.com">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-400 mb-2 font-mono">Message</label>
+                        <textarea required rows="4" class="w-full bg-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors placeholder-gray-600 resize-none" placeholder="Initiate handshake..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 rounded-lg bg-accent hover:bg-accent2 text-white font-semibold transition-all shadow-lg hover:shadow-accent/50">
+                        Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
+                    </button>
+                    <div id="formStatus" class="hidden mt-4 text-center font-mono text-sm text-green-400">Message sent successfully!</div>
+                </form>
+
+                <!-- Social Links -->
+                <div class="flex justify-center gap-6">
+                    <a href="https://github.com/myousufmoten" class="w-12 h-12 rounded-full bg-card border border-white/10 flex items-center justify-center hover:bg-accent hover:text-white transition-all hover:-translate-y-1">
+                        <i class="fa-brands fa-github text-xl"></i>
+                        
+                    </a>
+                    <a href="https://www.linkedin.com/in/myousufmoten/" class="w-12 h-12 rounded-full bg-card border border-white/10 flex items-center justify-center hover:bg-accent hover:text-white transition-all hover:-translate-y-1">
+                        <i class="fa-brands fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-card border border-white/10 flex items-center justify-center hover:bg-accent hover:text-white transition-all hover:-translate-y-1">
+                        <i class="fa-brands fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-6 text-center border-t border-white/10 bg-dark">
+        <p class="text-sm text-gray-500 font-mono">
+            Built with <span class="text-accent">&hearts;</span> by a future DevOps Engineer.
+        </p>
+    </footer>
+
+    <!-- Link to Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
