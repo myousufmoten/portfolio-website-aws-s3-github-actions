@@ -1,0 +1,31 @@
+name: Deploy Portfolio to AWS S3
+
+# Trigger the workflow when code is pushed to the main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the repository code
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    # Step 2: Configure AWS Credentials securely using GitHub Secrets
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1 # Change this if your bucket is in a different region
+
+    # Step 3: Sync the repository files to the S3 bucket
+    # --delete removes files in S3 that no longer exist in the GitHub repo
+    # --exclude ignores the .git and .github folders
+    - name: Deploy to S3
+      run: |
+        aws s3 sync . s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude ".git/*" --exclude ".github/*"
